@@ -218,6 +218,119 @@
 // $resultado = sumarEnteros(2, 5);
 // echo $resultado;
 
+// $cadena = 'aeíou';
+// $holamundo = "hola mundo como estás";
+
+// echo "$cadena[1] <br/>";
+// echo "strlen($cadena) <br/>"; // trae la cantidad de bytes
+// echo mb_strlen($cadena) . " <br/>"; // trae la cantidad de bytes
+
+// echo strpos($cadena, 'a') . " <br/>"; // trae la posicion de la letra
+
+// echo str_contains($holamundo, 'mundo') ? "si se encuentra <br/>" : "no se encuentra"; // trae true si contiene la letra
+
+// echo str_starts_with($holamundo, 'hola') ? "si empieza con hola <br/>" : "no empieza con hola <br/>"; // trae true si empieza con la letra
+
+// echo str_ends_with($holamundo, 'estás') ? "si termina con estás <br/>" : "no termina con estás <br/>"; // trae true si termina con la letra
+
+// $cadena1 = "prueba";
+// $cadena2 = "Prueba";
+
+// if (strcmp($cadena1, $cadena2) === 0) {
+//   echo "son iguales <br/>";
+// } else {
+//   echo "son diferentes <br/>";
+// }
+
+// if (strcasecmp($cadena1, $cadena2) === 0) {
+//   echo "son iguales <br/>";
+// } else {
+//   echo "son diferentes <br/>";
+// }
+
+// $cadena = "hola mundo";
+// echo substr($cadena, 1) . "<br/>";
+// echo substr($cadena, 0, 4) . "<br/>";
+// echo substr($cadena, -2) . "<br/>";
+// echo substr($cadena, -5, 3) . "<br/>";
+
+// echo str_replace("mundo", "dasda", $cadena) . "<br/>";
+// echo strtolower($cadena) . "<br/>";
+// echo strtoupper($cadena) . "<br/>";
+// echo ucfirst($cadena) . "<br/>";
+// echo ucwords($cadena) . "<br/>";
+
+// $array = [10, 13, 15, 20];
+// $array[] = 25;
+// $array[] = 30;
+// $array[] = 35;
+// $array[] = 40;
+
+// echo "$array[6]";
+
+// $array = [10, false, "string"]
+// $datos = [
+//   'nombre' => 'Jonathan',
+//   'email' => 'email@email.com',
+// ];
+
+// echo $datos['nombre'] . " <br/>";
+// echo $datos['email'] . "<br/>";
+
+// $datos = [
+//   [
+//     'nombre' => 'Jonathan',
+//     'email' => 'email@email.com',
+//   ],
+//   [
+//     'nombre' => 'jose',
+//     'email' => 'jose@email.com',
+//     'direccion' => [
+//       'pais' => 'argentina'
+//     ]
+//   ],
+//   [
+//     'nombre' => 'marcelo',
+//     'email' => 'marcelo@email.com',
+//   ],
+// ];
+
+// echo $datos[1]['nombre'] . " <br/>";
+// echo $datos[1]['email'] . " <br/>";
+// echo $datos[1]['direccion']['pais'] . " <br/>";
+
+// foreach ($datos as $item) {
+//   echo $item['nombre'] . " <br/>";
+//   echo $item['email'] . " <br/>";
+
+//   echo "<hr/>";
+// }
+
+// $array = [1, 2, 3];
+
+// list($a, $b, $c) = $array;
+
+// // var_dump($a, $b, $c);
+
+// $array = range(10, 11);
+
+// var_dump($array);
+
+// echo "<br/>";
+
+// echo count($array) . "<br/>";
+
+// $array = ["jonathan", "jose", "marcelo"];
+
+// unset($array[0]); // elimina el elemento del array
+
+// if (in_array("jonathan", $array)) {
+//   echo "si se encuentra <br/>";
+// } else {
+//   echo "no se encuentra <br/>";
+// }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -237,7 +350,58 @@
 </head>
 
 <body>
+  <form action="procesar.php" method="post" enctype="multipart/form-data">
+    <label>
+      Nombre:
+      <input type="text" name="nombre">
 
+    </label>
+    <br />
+    <label>
+      Edad:
+      <input type="number" name="edad">
+    </label>
+    <br />
+    <p style="margin: 4px 0;">Sexo:</p>
+    <select name="sexo">
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+    </select>
+    <!-- <label>
+      <input type="radio" name="sexo" value="masculino">
+      Masculino
+    </label>
+    <label>
+      <input type="radio" name="sexo" value="femenino">
+      Femenino
+    </label> -->
+    <br />
+    <p style="margin: 4px 0;">Roles:</p>
+    <label>
+      <input type="checkbox" name="roles[]" value="admin">
+      Admin
+    </label>
+    <label>
+      <input type="checkbox" name="roles[]" value="editor">
+      Editor
+    </label>
+    <label>
+      <input type="checkbox" name="roles[]" value="moderador">
+      Moderador
+    </label>
+    <br />
+    <br />
+    Imagen:
+    <br>
+    <input type="file" name="image">
+    <br />
+    <br />
+    <label>Mensaje</label>
+    <br />
+    <textarea name="mensaje"></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
 </body>
 
 </html>
